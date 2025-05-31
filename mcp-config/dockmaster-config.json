@@ -1,0 +1,101 @@
+{
+  "mcp_dockmaster": {
+    "proxy_server": {
+      "host": "0.0.0.0",
+      "base_port": 11000,
+      "enable_cors": true,
+      "enable_docs": true
+    },
+    "mcp_servers": {
+      "applescript_execute": {
+        "endpoint": "/mcp/applescript",
+        "port": 11001,
+        "description": "macOS automation via AppleScript",
+        "methods": ["execute", "system_events", "app_control"]
+      },
+      "github": {
+        "endpoint": "/mcp/github", 
+        "port": 11002,
+        "description": "GitHub repository management",
+        "methods": ["create_repo", "push_files", "create_issue", "search_code"]
+      },
+      "playwright": {
+        "endpoint": "/mcp/playwright",
+        "port": 11003, 
+        "description": "Browser automation and testing",
+        "methods": ["navigate", "screenshot", "click", "fill"]
+      },
+      "notes": {
+        "endpoint": "/mcp/notes",
+        "port": 11004,
+        "description": "Note management system", 
+        "methods": ["create_note", "get_folders", "search_notes"]
+      },
+      "screenshot": {
+        "endpoint": "/mcp/screenshot",
+        "port": 11005,
+        "description": "Screen capture with OCR",
+        "methods": ["capture", "ocr", "region_capture"]
+      },
+      "taskmaster": {
+        "endpoint": "/mcp/taskmaster", 
+        "port": 11006,
+        "description": "AI-powered task management",
+        "methods": ["create_task", "get_tasks", "update_status"]
+      },
+      "iterm": {
+        "endpoint": "/mcp/iterm",
+        "port": 11007,
+        "description": "Terminal integration",
+        "methods": ["execute_command", "send_keys", "get_output"]
+      },
+      "desktop_commander": {
+        "endpoint": "/mcp/desktop",
+        "port": 11008,
+        "description": "Desktop and system management", 
+        "methods": ["window_control", "file_operations", "system_info"]
+      },
+      "moom": {
+        "endpoint": "/mcp/moom",
+        "port": 11009,
+        "description": "Window management and layouts",
+        "methods": ["arrange_windows", "save_layout", "restore_layout"]
+      },
+      "image_viewer": {
+        "endpoint": "/mcp/images",
+        "port": 11010,
+        "description": "Image processing and viewing",
+        "methods": ["view_image", "process", "analyze"]
+      }
+    }
+  },
+  "open_webui_config": {
+    "tools": [
+      {
+        "name": "MCP AppleScript",
+        "url": "http://localhost:11001",
+        "type": "mcp_bridge"
+      },
+      {
+        "name": "MCP GitHub", 
+        "url": "http://localhost:11002",
+        "type": "mcp_bridge"
+      },
+      {
+        "name": "MCP Playwright",
+        "url": "http://localhost:11003", 
+        "type": "mcp_bridge"
+      },
+      {
+        "name": "MCP Notes",
+        "url": "http://localhost:11004",
+        "type": "mcp_bridge"
+      },
+      {
+        "name": "MCP Screenshot",
+        "url": "http://localhost:11005",
+        "type": "mcp_bridge"
+      }
+    ]
+  }
+}
